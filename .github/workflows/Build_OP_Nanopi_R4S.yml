@@ -7,7 +7,7 @@ on:
 
 jobs:
   OpenWrt-18_06:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
         cd "/home/runner/openwrt"
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        patch -p1 < "${GITHUB_WORKSPACE}/patches/1806-modify_for_r4s.patch"
+  #      patch -p1 < "${GITHUB_WORKSPACE}/patches/1806-modify_for_r4s.patch"
     - name: Build OpenWrt-18.06
       run: |
         cd "/home/runner/openwrt"
